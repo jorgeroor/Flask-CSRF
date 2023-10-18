@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> CSRF Prevention Lab</title>
+    </head>
+    <body>
+        <h1> CSRF Prevention Lab</h1>
+        <p> Tu saldo actual es: {{balance}}</p>
+        <form  action='/' method="POST">
+            {{ form.csrf_token }}
+            {{ form.amount.label }} {{ form.amount }}
+            {{ form.submit.label }} {{ form.submit }}
+        </form>
+    </body>
+</html>

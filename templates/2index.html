@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> CSRF Prevention Lab</title>
+    </head>
+    <body>
+        <h1> CSRF Prevention Lab</h1>
+        <p> Tu saldo actual es: {{session.balance}}</p>
+        <form  action='/' method="POST">
+            <input type='hidden' name='csrf_token' value="{{ csrf_token() }}">
+            <label for="amount">Cantidad a transferir:</label>
+            <input type="number" id="amount" name="amount">
+            <button type="submit">transferir</button>
+        </form>
+        <p class="banner"></p>
+        <script>
+            console.log('script in execution')
+            /*banner = document.querySelector('.banner')
+            form = document.querySelector('form')
+            console.log(banner, form)
+            form.addEventListener('submit', (e) =>{
+                console.log('EVENT!!!')
+                e.preventDefault()
+                banner.textcontent = 'Submited!'
+            })*/
+        </script>
+    </body>
+</html>
